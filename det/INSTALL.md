@@ -5,11 +5,8 @@
 # for that, check that `which conda`, `which pip` and `which python` points to the
 # right path. From a clean conda env, this is what you need to do
 
-conda create --name mic-sada -y
+conda create --name mic-sada python=3.10 -y
 conda activate mic-sada
-
-# this installs the right pip and dependencies for the fresh python
-conda install python=3.9.7 ipython=8.1.1 pip=21.2.4
 
 # follow PyTorch installation in https://pytorch.org/get-started/locally/
 # we give the instructions for CUDA 11.3
@@ -47,6 +44,7 @@ python setup.py build develop
 
 
 unset INSTALL_DIR
+pip install numpy==1.23
 ```
 
 To run [convert_cityscapes_to_coco.py](tools/cityscapes/convert_cityscapes_to_coco.py) and [convert_foggy_cityscapes_to_coco.py](tools/cityscapes/convert_foggy_cityscapes_to_coco.py), you also need to run:
